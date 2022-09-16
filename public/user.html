@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/userInfo.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="scripts/userClient.js"></script>
+    <title>stocks4me ◉ User</title>
+</head>
+
+<body>
+    <script>
+        window.onload=function(){
+            if(!getUserInfo["loggedIn"] == "true") {
+                window.location = "/index.html";
+            } else {
+                let userInfo = getUserInfo();
+                document.getElementById("title").innerHTML = userInfo["username"];
+                document.getElementById("wallet").value = userInfo["wallet"];
+                displayUserInfo();
+                document.getElementById("pfpPreview").src = userInfo["pfp"];
+                
+                console.log("Loaded Page")
+            }
+        }
+    </script>
+    <nav class="navbar navbar-dark py-3" style="background-color: #50C878;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html"><img src="img/logo.png" style="width: 50px" />stocks4me</a>
+            <div class="navbar-nav" style="flex-direction: row" id="nav">
+                <a class="nav-link" style="padding:10px;" aria-current="page" href="home.html">Home</a>
+                <a class="nav-link" style="padding:10px;" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" style="padding:10px;" href="about.html">About</a>
+                <div id="nav-user"></div>
+            </div>
+        </div>
+    </nav>
+    
+    <div id="content">
+        <div id="container">
+            <h1 id="title">User Profile</h1><br />
+            <div class="module" id="userInfoContent">
+                    <img src="img/pfpPlaceholder.svg" id="pfpPreview">
+                    <div class="userInfoOption">
+                        <div class="userInfoOptionInput">
+                        <label for="wallet">Wallet</label>
+                        <input class="form-control rounded" id="wallet" type="text" name="wallet" placeholder="Enter a wallet...">
+                        </div>
+                        <button class="updateUserInfoButton btn" onclick="updateWallet(document.getElementById('wallet').value, true)">Update Wallet</button>
+                    </div>
+            </div>
+            <button class="btn" onclick="logout()">Log Out</button>
+        </div>
+    </div>
+    
+    <!-- <h1 style="text-align: center; text-decoration:wavy">-=- User Information -=-</h1>   
+    <div style="padding: 5px; margin: auto; width: 20%; text-align: center;">
+        <h2 style="text-decoration: underline;">Username:</h2>
+        <p id="user-username"></p>
+        <h2 style="text-decoration: underline;">Profile Picture:</h2>
+        <img src="/img/pfpPlaceholder.svg"
+        >
+        <br>
+        <h2 style="text-decoration: underline;">Wallet Amount:</h2>
+        <p id="user-userwallet"></p>
+        <label for="wallet">Update Wallet:</label>
+        <input type="text" id="wallet" name="wallet">
+        <button onclick="updateWallet(document.getElementById('wallet').value); window.location = window.location;">Submit!</button>
+        </input>
+    </div> -->
+</body>

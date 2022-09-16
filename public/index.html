@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/userInfo.css">
+    <script src="scripts/userClient.js"></script>
+    <title>stocks4me ◉ Log In</title>
+    <meta name="google-signin-client_id" content="419878406960-2h0rvfk53r1oe6i5pi9dkhio75qvkti8.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script type="module" src="scripts/googleClient.js"></script>
+    <script>
+        window.onload = function() {
+            document.getElementById("signInButton").onclick = (() => {
+                googleSignIn(); 
+            });
+            if(localStorage.getItem("loggedin")) {
+                window.location = "/home.html"
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-dark py-3" style="background-color: #50C879;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" onclick="loginBlock()"><img src="img/logo.png"
+                    style="width: 50px" />stocks4me</a>
+            <div class="navbar-nav" style="flex-direction: row;">
+                <a class="nav-link" style="padding:10px;" href="/tutorial.html" onclick="loginBlock()">About</a>
+            </div>
+        </div>
+    </nav>
+    <!-- source: https://www.tutorialrepublic.com/snippets/preview.php?topic=bootstrap&file=simple-login-form
+                     https://stackoverflow.com/questions/44221250/redirecting-to-a-page-after-submitting-form-in-html
+        -->
+    <div id="content">
+        <div id="container">
+            <div id="aboutContainer">
+                <div class="module" id="landingContainer">
+                    <img src="img/logo.png" id="logo"/>
+                    <div id="landingRight">
+                        <h1 id="title">Welcome to stocks4me.</h1><br />
+                        <p>Your one-stop shop for all your portfolio planning needs.</p>
+                        <button class="btn" id="signInButton">Sign In With Google</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="css/userInfo.css">
+	<script src="scripts/userClient.js"></script>
+	<title>stocks4me ◉ Tutorial</title>
+</head>
+
+<body>
+	<script>
+		window.onload = function () {
+			displayUserInfo();
+		}
+	</script>
+	<nav class="navbar navbar-dark py-3" style="background-color: #50C878;">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="home.html"><img src="img/logo.png" style="width: 50px" />stocks4me</a>
+			<div class="navbar-nav" style="flex-direction: row" id="nav">
+				<a class="nav-link" style="padding:10px;" aria-current="page" href="home.html">Home</a>
+				<a class="nav-link" style="padding:10px;" href="dashboard.html">Dashboard</a>
+				<a class="nav-link" style="padding:10px;" href="about.html">About</a>
+				<div id="nav-user"></div>
+			</div>
+		</div>
+	</nav>
+	<div id="content">
+		<div id="container" style="margin-bottom:25px;">
+			<div id="aboutContainer">
+			<h1 id="title">stocks4me Tutorial</h1><br />
+			<div class="module tutorialSection">
+				<h2>Getting Started</h2>
+				<img class="tutorialImage" src="/img/tutorial/tutorial1.png">
+				<p>Go to the User Profile page by clicking on your profile picture or wallet amount on the right side of the navigation bar.</p>
+				<img class="tutorialImage" src="/img/tutorial/tutorial2.png">
+				<p>Here, you can update your wallet amount or sign out. Enter an amount of money in your wallet; this will be used to buy and sell stocks.</p>
+			</div>
+			<div class="module tutorialSection">
+				<h2>The Homepage</h2>
+				<img class="tutorialImage" src="/img/tutorial/tutorial3.png">
+				<p>The "Home" tab is where you can search for stocks, view all the stocks in your portfolio, read news stories, and buy/sell shares.</p>
+				<img class="tutorialImage" src="/img/tutorial/tutorial4.png">
+				<p>To buy or sell shares, you must search the stock first. Try searching for "Amazon"!</p>
+				<img class="tutorialImage" src="/img/tutorial/tutorial5.png">
+				<p>You can now see Amazon's current information, updating in realtime. To buy a share, use the "Buy Share" button at the bottom of the search results.</p>
+				<img class="tutorialImage" src="/img/tutorial/tutorial6.png">
+				<p>You now have a few shares of Amazon stock. Congratulations! If you scroll down, you will see the most recent information for all your stocks, in addition to news stories.</p>
+				<p>Stocks in your portfolio are updated whenever you sign in. To refresh manually, use the "View Realtime Info" button.</p>
+			</div>
+			<div class="module tutorialSection">
+				<h2>The Dashboard</h2>
+				<img class="tutorialImage" src="/img/tutorial/tutorial7.png">
+				<p>The dashboard is a planning tool that allows you to view all your stocks on the same graph, as well as see your total portfolio value.</p>
+				<img class="tutorialImage" src="/img/tutorial/tutorial8.png">
+				<p>On the right, you'll see a list of your stocks. You can show or hide any stock you like, which will be updated in the graph.</p>
+			</div>
+			<div class="module tutorialSection">
+				<h2>That's It!</h2>
+				<p>You're now ready to use stocks4me to plan your investments.</p>
+				<p>If you need a refresher, you can view this tutorial anytime from the "About" page.</p>
+			</div>
+			<button class="btn" onclick="window.location = '/home.html'">Back To Home</button>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,489 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  
+  /* color definitions */
+  --body-background: #ffffff;
+  --light: #f0eeed;
+  --dark: #2e4052;
+  --primary: #50c878;
+  --red: #f42c04;
+  --dark-green: #008000;
+  
+  /* body colors */
+  background-color: var(--body-background);
+  color: var(--dark);
+  
+  /* header colors */
+  --header-background-color: var(--primary); 
+  --header-text-color: var(--light);
+  
+  /* UI Element Colors */
+  --element-highlight-color: var(--primary);
+  --content-background-color: var(--light);
+  --content-text-color: var(--dark);
+  --element-negative-color: var(--red);
+  --element-positive-color: var(--dark-green);
+  
+}
+
+#content {
+  width:100%;
+  overflow:hidden;
+}
+
+#topRow {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  align-items:flex-start;
+  justify-content:center;
+  gap:20px;
+  margin:20px;
+  margin-top:125px;
+}
+
+#stockChartContainer {
+  width:62%;
+  min-height: 500px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#rightDashboardContentContainer {
+  width:32%;
+  padding:0;
+  margin:10px;
+}
+
+#searchContainer, #portfolioValueContainer {
+  width:100%;
+  margin:0;
+}
+
+#portfolioValueContainer {
+  margin-top:20px;
+}
+
+#portfolioValueDisplay {
+  font-size:1.5em;
+}
+
+.navbar {
+  background-color:var(--header-background-color);
+  color: var(--header-text-color);
+  position:fixed;
+  width:100%;
+  float:top;
+  z-index:10;
+}
+
+.nav-link, .nav-text {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.login-form {
+  width: 450px;
+  margin: 80px auto;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.login-form form {
+  margin-bottom: 15px;
+  background: var(--light);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0);
+  padding: 30px;
+}
+.login-form h2 {
+  margin: 0 0 15px;
+}
+.form-control, .btn {
+  min-height: 38px;
+  border-radius: 2px;
+}
+.btn {        
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--primary);
+  color: var(--light);
+  border:none;
+}
+
+#chart{
+  padding-top: 10px;
+}
+
+#stock-search-results{
+  padding: 5px;
+  margin: auto;
+  max-width: 75%; 
+  justify-content: center;
+  visibility: collapse;
+}
+
+#searchStockInfo{
+  text-align: center;
+}
+
+.panel-heading{
+  border-top: 3px dotted var(--primary);
+}
+
+#stockHistoryInfo {
+  visibility: show;
+  max-height: 80px;
+  margin-bottom: 10px;
+  overflow-y:auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#sellButton {
+  background-color:var(--red);
+}
+
+.interactStockButton {
+  margin:5px;
+}
+
+.negativeStock {
+  color:var(--red);
+}
+
+.positiveStock {
+  color:var(--dark-green);
+}
+
+#searchGraph {
+  width:100%;
+  height:100%;
+}
+
+.module {
+  /* border: 5px solid var(--primary); */
+  background-color:var(--light);
+  border-radius:20px;
+  padding: 20px;
+  margin:10px;
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.05);
+}
+
+.jumbotron {
+  width: 90%;
+}
+
+.articleImage, .articleImageTop {
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.05);
+  border-radius:10px;
+}
+
+.stockInfoContainerRightColumn, .stockInfoContainerLeftColumn {
+  width:50%;
+}
+
+.stockInfoContainerLeftColumn {
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  text-align:center;
+  align-items:center;
+}
+
+.stockDetailsContainer {
+  background-color:var(--body-background);
+  width:75%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:stretch;
+  border-radius:20px;
+  padding:10px;
+}
+
+.hiObject, .loObject {
+  height:100%;
+  margin:0;
+  flex-grow:1;
+  padding:10px;
+}
+
+.stockObjectPrice {
+  margin:0;
+  padding:10px;
+  font-weight:bold;
+}
+
+.stockHiLoContainer {
+  display:flex;
+  flex-direction:row;
+  align-content:stretch;
+  align-items:center;
+  width:100%;
+}
+
+.stockHiLoDivider {
+  background-color:var(--dark);
+  width:2px;
+  height:75%;
+  border-radius:2px;
+}
+
+.stockObjectLastUpdated {
+  margin:0;
+  padding:10px;
+  font-style:italic;
+}
+
+.graphContainer {
+  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.05);
+  background-color:var(--body-background);
+  padding:15px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.stockInfoContainerInList {
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  gap: 10px;
+}
+
+.stockContainerWrapper {
+  flex-shrink:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  min-width: 550px;
+  width:75%;
+  gap: 10px;
+  border-radius:30px;
+}
+
+#table_holder {
+  display:flex;
+  flex-direction:row;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+#allStocksHolder {
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+}
+
+.newsArticleList {
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  gap:20px;
+  overflow-x:scroll;
+  overflow-y: hidden;
+  border-radius:20px;
+}
+
+.showGradientLeft {
+ -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1));
+}
+
+.showGradientRight {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.showGradientBoth {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+.showGradientNone {
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1), rgba(0,0,0,1));
+}
+
+.newsArticle {
+  text-align:left;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  background-color:white;
+  padding:20px;
+  border-radius:20px;
+  text-decoration:none;
+}
+
+.articleImage {
+  height:200px;
+}
+
+.articleHeadline {
+  width:200px;
+  margin-left:20px;
+  color:black;
+  text-decoration:underline white;
+}
+
+.topNewsArticle {
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  /* background-color:orange; */
+}
+
+.navbarMoneyContainer {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+#topNewsArticleContentContainer {
+  /* background-color:red; */
+  display:flex;
+  flex-direction:row;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+#leftTopNewsContent {
+  /* background-color:blue; */
+  flex-grow:1;
+  display:flex;
+  flex-direction:column;
+  text-align:right;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+#rightTopNewsContent {
+  /* background-color:green; */
+  flex-grow:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:left;
+}
+
+#userInfoContainerNavbar {
+  display:flex;
+  flex-direction:row-reverse;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+
+#walletAmountPreviewNavbar {
+  margin:0;
+}
+
+#userPFPNavbar {
+  width:50px;
+  background-color:white;
+  border: 2px solid var(--dark);
+  border-radius:10px;
+}
+
+.chartColorPicker {
+  width: 100%;
+  margin-top:20px;
+}
+
+.loadInSearchButton {
+  width: 100%;
+}
+
+.axis, .chart {
+  user-select:none;
+}
+
+.stockInfoContainerSearch .stockDetailsContainer {
+  width:100%;
+}
+
+@media screen and (prefers-color-scheme:dark) {
+  body {
+    background-color: var(--dark);
+    color: var(--light);
+  }
+  
+  .module {
+    color: var(--dark);
+  }
+  
+  .login-form form {
+    background: var(--dark);
+  }
+  
+  .positiveStock {
+    color: var(--primary);
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #table_holder {
+    flex-direction:column;
+  }
+  
+  .stockInfoContainerInList {
+    flex-direction:column;
+  }
+  
+  .stockDetailsContainer {
+    width:100%;
+    margin-top:20px;
+    margin-bottom:20px;
+    min-width:none;
+  }
+  
+  #searchContainer, #stockChartContainer {
+    width:100%;
+  }
+  
+  .graphContainer {
+    margin-top:10px;
+  }
+  
+  .stockInfoContainerRightColumn, .stockInfoContainerLeftColumn {
+    width:100%;
+  }
+  
+  .newsArticle {
+    width:100%;
+  }
+  
+  #allStocksHolder {
+    width:100%;
+  }
+  
+  .stockContainerWrapper {
+    width:100%;
+    min-width:none;
+  }
+  
+  #topRow {
+    margin-top:175px;
+    flex-direction:column;
+    margin-left:0;
+  }
+  
+  #topNewsArticleContentContainer {
+    flex-direction:column;
+  }
+  
+  #content {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+}

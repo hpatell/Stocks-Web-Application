@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/userInfo.css">
+    <script src="scripts/userClient.js"></script>
+    <title>stocks4me ◉ About</title>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            displayUserInfo();
+        }
+    </script>
+    <nav class="navbar navbar-dark py-3" style="background-color: #50C878;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html"><img src="img/logo.png" style="width: 50px" />stocks4me</a>
+            <div class="navbar-nav" style="flex-direction: row" id="nav">
+                <a class="nav-link" style="padding:10px;" aria-current="page" href="home.html">Home</a>
+                <a class="nav-link" style="padding:10px;" href="dashboard.html">Dashboard</a>
+                <a class="nav-link active" style="padding:10px;" href="about.html">About</a>
+                <div id="nav-user"></div>
+            </div>
+        </div>
+    </nav>
+    <div id="content">
+        <div id="container">
+            <h1 id="title">About stocks4me</h1><br />
+            <div id="aboutContainer">
+            <div class="module">
+                <p>
+                    The stocks4me web application is the brainchild of
+                    Noah Hodgson, Justin Hamilton, Himanshu Patel, Matt
+                    Pangilinan, and Vraj Patel.
+                    <br>
+                    <br>
+                    Going into this project we had a goal to create a simple, clean stock
+                    application that allowed a user to plan out their portfolio in real time. The user would be able to
+                    buy and sell shares of stocks. The user would be able to modify a chart that displayed stock
+                    information. Also, the user would be fed a custom news feed that would feed them information about
+                    the stocks in their portfolio, so they can keep up with the companies that they invest in. Currently
+                    it uses the following APIs:
+                    <br>
+                    <br>
+                    D3:
+                    Build charts as svg files so we can display graph of our fed in data
+                    <br>
+                    <br>
+                    Finnhub:
+                    Checks current prices of stocks, and provides real-time updates using WebSockets.
+                    <br>
+                    <br>
+                    Alpha Vantage:
+                    Provides a history of a stock symbol, going back over 10 years. This is the data for the chart.
+                    <br>
+                    <br>
+                    New York Times News API:
+                    Returns JSON object with all necessary information such as author, title, description, url, image,
+                    and date published
+                </p>
+            </div>
+            <button class="btn" onclick="window.location = '/tutorial.html'">stocks4me Tutorial</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
